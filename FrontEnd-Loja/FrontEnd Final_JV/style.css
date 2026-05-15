@@ -1,0 +1,149 @@
+/* Importando uma fonte moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #333;
+}
+
+#container {
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: 1fr 350px; /* Divide a tela entre lista e formulário */
+    gap: 40px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    #container {
+        grid-template-columns: 1fr;
+    }
+}
+
+h1, h2 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+h1 { font-size: 1.5rem; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+h2 { font-size: 1.2rem; }
+
+/* Estilização da Lista */
+#lista-pedidos {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-pedidos li {
+    background: #fafafa;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+#lista-pedidos li:hover {
+    transform: translateX(5px);
+    border-color: #3498db;
+}
+
+/* Estilização dos Inputs e Select */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* Garante que o padding não quebre a largura */
+    font-size: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* Botões */
+button {
+    cursor: pointer;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s, opacity 0.2s;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Botão Salvar (Principal) */
+button[onclick="cadastrarPedido()"] {
+    background-color: #2ecc71;
+    color: white;
+}
+
+/* Botão Atualizar */
+button[onclick="atualizarPedido()"] {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Botões dentro da lista (Editar/Excluir) */
+#lista-pedidos button {
+    width: auto;
+    padding: 5px 12px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 0;
+}
+
+#lista-pedidos button:first-of-type { background-color: #f39c12; color: white; } /* Editar */
+#lista-pedidos button:last-of-type { background-color: #e74c3c; color: white; }  /* Excluir */
+
+button:hover {
+    opacity: 0.9;
+    filter: brightness(1.1);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Botão Registrar Venda */
+.btn-venda {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(142, 68, 173, 0.3);
+}
+
+.btn-venda:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 6px 15px rgba(142, 68, 173, 0.4);
+}
+
+.btn-venda:active {
+    transform: scale(0.98);
+}
